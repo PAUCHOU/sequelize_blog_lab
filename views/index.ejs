@@ -1,0 +1,11 @@
+<!DOCTYPE>
+<html>
+  <head>
+  </head>
+  <body>
+    <% blogs.forEach(function(blog) {%>
+      <%= blog.dataValues.author %>,
+      <%= blog.dataValues.post %>
+    <% }) %>
+  </body>
+</html>
