@@ -1,11 +1,18 @@
-<!DOCTYPE>
-<html>
-  <head>
-  </head>
-  <body>
-    <% blogs.forEach(function(blog) {%>
-      <%= blog.dataValues.author %>,
-      <%= blog.dataValues.post %>
-    <% }) %>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- TAKE THE DATA FROM BLOGLIST, LOOP OVER IT AND PRINT IT OUT -->
+	    <p> 
+<!-- 
+		<%= blogList.forEach(function(blogs){ %>
+		<%=	blogList.title, %>
+		<%=	blogList.body, %>
+		<%=	blogList.authorId %>
+		<%= }) %> -->
+		<%= console.log(blogList.title) %>		</p>
+</body>
 </html>

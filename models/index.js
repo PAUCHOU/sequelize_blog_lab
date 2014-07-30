@@ -23,9 +23,8 @@ Object.keys(db).forEach(function(modelName) {
   }
 })
 
-db.blog.create({author:"Kevin", post:"I had a sandwich for lunch"}).success(function(blog){
-  console.log(blog)
-})
+
+
 
 module.exports = lodash.extend({
   sequelize: sequelize,
