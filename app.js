@@ -20,7 +20,13 @@ app.get("/new", function(req, res){
 	// req.query.title
 	// req.query.body
 	// req.query.authorId
-	db.post.create({title: req.query.title, body: req.query.body, authorId: req.query.authorId})
+	db.post.create({title: req.query.title, body: req.query.body, authorId: req.query.authorId}).error(function(error){
+		console.log("THERE IS AN ERROR!")
+		console.log(error)
+	}) .success(function(data){
+		console.log("CREATION COMPLETE!")
+	})
+
 	// put req.query info in the DB
 	//res.redirect to /posts
 
@@ -32,6 +38,7 @@ app.get("/blog", function(req, res){
 	// render an index page with an array of posts
 	// using a forEach loop, we want to go through each post and print out some info
 	db.post.findAll().success(function(blogs){
+		console.log(blogs)
 		res.render('index', {blogList: blogs});
 	})
 })
@@ -42,7 +49,9 @@ app.get("/blog", function(req, res){
 // once we have that ID we make a database query
 // search in the DB for all the blog posts WHERE the id of the author is req.params.id
 // go through the returned data (probably an array) and loop over using a forEach and print out the name, etc.
-
+app.get("/user/:id", function(req, res){
+	req.params.id
+})
 
 app.listen(3000, function(){
 	console.log("server listen on 3000")

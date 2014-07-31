@@ -6,13 +6,16 @@
 </head>
 <body>
 	<!-- TAKE THE DATA FROM BLOGLIST, LOOP OVER IT AND PRINT IT OUT -->
-	    <p> 
-<!-- 
-		<%= blogList.forEach(function(blogs){ %>
-		<%=	blogList.title, %>
-		<%=	blogList.body, %>
-		<%=	blogList.authorId %>
-		<%= }) %> -->
-		<%= console.log(blogList.title) %>		</p>
+	<%	blogList.forEach(function(blog){ %>
+	<p>
+		Title: <%=	blog.title %>
+	</p>
+	<p>
+		<%=	blog.body %>
+	</p>
+	<p>
+	<%=	blog.authorId %>
+	 <% }) %>
+	 </p>
 </body>
 </html>
